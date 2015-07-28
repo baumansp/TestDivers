@@ -1,0 +1,13 @@
+<!-- Le nom IntroEJB3 est purement arbitraire, le nom de la DataSource 
+est celui défini par JBoss, la valeur 'update' de la propriété 'hibernate.hbm2ddl.auto'
+ indique que nous souhaitons qu'Hibernate crée la structure de données automatiquement 
+ et la mette à jour si nécessaire) -->
+ 
+<persistence>
+   <persistence-unit name="IntroEJB3">
+      <jta-data-source>java:/DefaultDS</jta-data-source>
+      <properties>
+         <property name="hibernate.hbm2ddl.auto" value="update"/>
+      </properties>
+   </persistence-unit>
+</persistence>
