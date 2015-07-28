@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javacodegeeks.snippets.enterprise.ProcMapper">
+
+
+    <resultMap id="procContainerResultMap" type="com.javacodegeeks.snippets.enterprise.ProcContainer">
+        <result column="ID" property="id"/>
+        <collection property="procList" resultMap="ProcedureResultMap" />
+    </resultMap>
+
+    <resultMap id="ProcedureResultMap" type="com.javacodegeeks.snippets.enterprise.Proc">
+        <result column="PROC_ID" property="id"/>
+        <result column="PROC_ID_LITIGE" property="idLitige"/>
+        <result column="PROC_ID_LITIGE_PROCEDURE" property="idLitigeProcedure"/>
+        <result column="PROC_ID_PUBLIE" property="idpublie"/>
+        <result column="PROC_AFF_ID" property="affId"/>
+        <result column="PROC_NOM_USUEL" property="nomUsuel"/>
+        <result column="PROC_CODE_LANGUE_PROCEDURE" property="codeLangue"/>
+        <result column="PROC_NODE" property="node"/>
+        <result column="PROC_CODE_ETAT" property="codeEtat"/>
+        <result column="PROC_PILOTE" property="procPilote"/>
+        <result column="PROC_DATE_DER_MAJ" property="dateDerMaj"/>
+    </resultMap>
+
+    <resultMap id="ListContainerResultMap" type="com.javacodegeeks.snippets.enterprise.ContainerList">
+        <collection property="containerList" resultMap="procContainerResultMap" />
+    </resultMap>
+
+
+</mapper>

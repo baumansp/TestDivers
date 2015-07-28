@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.javacodegeeks.snippets.enterprise.BlogMapper">
+
+
+
+    <resultMap type='com.javacodegeeks.snippets.enterprise.Blog' id='BlogResult'>
+        <id property='blogId' column='blog_id'/>
+        <result property='blogName' column='BLOG_NAME'/>
+        <result property='createdOn' column='CREATED_ON'/>
+        <collection property='posts' ofType='com.javacodegeeks.snippets.enterprise.Post' resultMap='PostResult' columnPrefix='post_'></collection>
+    </resultMap>
+
+    <resultMap type='com.javacodegeeks.snippets.enterprise.Post' id='PostResult'>
+        <id property='postId' column='post_id'/>
+        <result property='title' column='title'/>
+        <result property='content' column='content'/>
+        <result property='createdOn' column='created_on'/>
+    </resultMap>
+
+
+</mapper>
