@@ -1,3 +1,15 @@
+create DATABASE pascal;
+
+CREATE USER 'pascal'@'localhost' IDENTIFIED BY 'pascal';
+
+GRANT ALL PRIVILEGES ON * . * TO 'pascal'@'localhost';
+
+
+
+
+use pascal;
+
+
 CREATE TABLE employee (id INT, name VARCHAR(100),surname VARCHAR(20), title VARCHAR(10), created DATE);
 CREATE TABLE `proc` (
   `PROC_ID` bigint(20) NOT NULL COMMENT 'L''id e-Curia de la procédure. ',
@@ -52,4 +64,3 @@ CREATE TABLE post (
   CONSTRAINT FK_post_blog FOREIGN KEY (blog_id) REFERENCES blog (blog_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-rem
