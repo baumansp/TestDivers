@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Blog {
 
+
+
     private Integer blogId;
     private String blogName;
     private Date createdOn;

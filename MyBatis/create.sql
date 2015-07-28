@@ -1,5 +1,4 @@
 CREATE TABLE employee (id INT, name VARCHAR(100),surname VARCHAR(20), title VARCHAR(10), created DATE);
-
 CREATE TABLE `proc` (
   `PROC_ID` bigint(20) NOT NULL COMMENT 'L''id e-Curia de la procédure. ',
   `PROC_ID_LITIGE` varchar(100) DEFAULT NULL,
@@ -19,7 +18,7 @@ CREATE TABLE `proc` (
 CREATE TABLE `proc_container` (
   `ID` int(11) NOT NULL,
   `PROC_ID` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+)  ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE user (
@@ -52,3 +51,5 @@ CREATE TABLE post (
   KEY FK_post_blog (blog_id),
   CONSTRAINT FK_post_blog FOREIGN KEY (blog_id) REFERENCES blog (blog_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+rem
